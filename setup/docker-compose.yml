@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis:
+    image: redislabs/redisearch:latest
+    container_name: redis
+    env_file:
+      - ./.env
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
